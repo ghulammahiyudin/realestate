@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+	<link href="~/css/stylesheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/Home/Index">Real Estate Co.</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Property/Index">Listings</a></li>
+                    <li><a href="/Home/About">About</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-left">
+                <h3>Real Estate Co.</h3>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="/Home/About">About Us</a></li>
+                    <li><a href="/Home/Contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+               <a href="#">Facebook</a>
+               <a href="#">Twitter</a>
+               <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿@using RealEstateManagementSystem.Models
+@model List<RealEstateProperty>
+
+@{
+    ViewData["Title"] = "Real Estate Management System";
+}
+
+<!-- Welcome Section -->
+<section class="welcome-section">
+    <div class="container">
+        <h1>Welcome to Real Estate Co.</h1>
+        <p>Your trusted partner in finding the perfect home.</p>
+        <a href="/Home/Listing" class="cta-button">Browse Listings</a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://media.istockphoto.com/id/1496915186/photo/house-model-with-man-holding-magnifying-glass-home-inspection-or-searching-for-a-house.webp?b=1&s=170667a&w=0&k=20&c=ilTtEm1mN4wo9yuaCCuCYtz4v97qRiDAe_XwWepZ7ak=" alt="Buying a Home">
+                <div class="service-info">
+                    <h3>Buying a Home</h3>
+                    <p>We offer a wide range of homes to suit your needs and budget.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVudGFsJTIwcHJvcGVydHl8ZW58MHx8MHx8fDA%3D" alt="Selling a Home">
+                <div class="service-info">
+                    <h3>Selling a Home</h3>
+                    <p>Our experts will help you get the best price for your property.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://media.istockphoto.com/id/1456183865/photo/legal-real-estate-agent-contract-agreement-lease-mortgage-rental-home-insurance-concept.webp?b=1&s=170667a&w=0&k=20&c=UhJ2afDDugz7CK1bAHVyFiGxe62h-8bFWWhAwPiQJjw=" alt="Property Management">
+                <div class="service-info">
+                    <h3>Property Management</h3>
+                    <p>Comprehensive management services for your rental properties.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Property Cards Section -->
+<section class="property-section">
+    <div class="container">
+        <h2>Featured Properties</h2>
+        <div class="property-grid">
+            @foreach (var property in Model)
+            {
+                <div class="property-card">
+                    <img src="/images/@property.Image" alt="Property Image">
+                    <div class="property-info">
+                        <h3>@property.Name</h3>
+                        <p>@property.Description</p>
+                        <p><span>Type : </span>@property.Type</p>
+                        <p><span>Price : </span>@(property.Price)$</p>
+                        <p><span>Date : </span>@property.CreatedDate.ToString("MM/dd/yyyy")</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"Real Estate Co. helped me find my dream home. Highly recommended!"</p>
+                <h4>- John Doe</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Professional and efficient service. I sold my house in no time."</p>
+                <h4>- Jane Smith</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Excellent property management services. My rental properties are in great hands."</p>
+                <h4>- Michael Johnson</h4>
+            </div>
+        </div>
+    </div>
+</section>

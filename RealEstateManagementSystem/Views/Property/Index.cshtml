@@ -1,0 +1,32 @@
+﻿@using RealEstateManagementSystem.Models
+@model List<RealEstateProperty>
+
+@{
+    ViewData["Title"] = "Property Management";
+}
+
+<section class="property-section">
+    <div class="container">
+        <h2>Featured Properties</h2>
+        <div class="create-property">
+            <a href="/Property/Create" class="create-button">Create New Property</a>
+        </div>
+        <div class="property-grid">
+            @foreach(var property in Model)
+            {
+				<div class="property-card">
+                    <img src="/images/@property.Image" alt="Property Image">
+                    <div class="property-info">
+                        <h3>@property.Name</h3>
+                        <p>@property.Description</p>
+                        <p><span>Type : </span>@property.Type</p>
+                        <p><span>Price : </span>@(property.Price)$</p>
+                        <p><span>Date : </span>@property.CreatedDate.ToString("MM/dd/yyyy")</p>
+                        <a asp-controller="Property" asp-action="Edit" asp-route-id="@property.Id" class="edit-btn">Edit</a>
+                        <a asp-controller="Property" asp-action="Delete" asp-route-id="@property.Id" class="delete-btn">Delete</a> 
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
